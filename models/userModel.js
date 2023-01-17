@@ -13,6 +13,16 @@ const userSchema = new mongoose.Schema(
             lowercase: true,
             validate: [validator.isEmail]
         },
+        role: {
+            type: String,
+            default: 'passenger',
+            enum: ['driver', 'passenger']
+        },
+        gender: {
+            type: String,
+            required: true,
+            enum: ["male", 'female', 'other']
+        },
         photo: {
             type: String
         },
