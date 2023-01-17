@@ -24,4 +24,4 @@ mongoose
 
 
 app.use(express.json())
-app.use('/signIn', userRoutes)
+app.use('/', userRoutes)

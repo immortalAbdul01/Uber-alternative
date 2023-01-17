@@ -35,5 +35,14 @@ const userSchema = new mongoose.Schema(
 
 
 )
+userSchema.pre('save', async function (next) {
+    if (!this.isModified('createPassword')) return next()
+    this.createPassword = await bcrypt.hash(this.createPassword, 12)
+    this.passwordConfirm = undefined
+    next()
+})
+userSchema.methods.correctPassword = (async function (candidatePassword, password) {
+    return await bcrypt.compare(candidatePassword, password)
+})
 const User = mongoose.model('user', userSchema)
 module.exports = User
