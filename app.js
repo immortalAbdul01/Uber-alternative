@@ -1,9 +1,10 @@
 const express = require('express')
 const app = express()
+const userRoutes = require('./routes/userRoutes')
 const mongoose = require('mongoose');
 // const { config } = require('process');
 const dotenv = require('dotenv')
-app.listen(2000, () => {
+app.listen(2050, () => {
     console.log('listening on port 2000 ');
 })
 
@@ -20,3 +21,7 @@ mongoose
 
         console.log('connected with moongoses');
     })
+
+
+app.use(express.json())
+app.use('/signIn', userRoutes)
