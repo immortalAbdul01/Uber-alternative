@@ -41,7 +41,11 @@ const userSchema = new mongoose.Schema(
                 },
                 message: 'the passwords are not same'
             }
-        }
+        },
+        passwordChangeAt: Date,
+        passwordRestToken: String,
+        passwordResetExpires: Date,
+        updatePassword: String,
     }
 
 

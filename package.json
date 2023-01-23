@@ -24,6 +24,7 @@
     "jsonwebtoken": "^9.0.0",
     "mongoos": "^0.0.1-security",
     "mongoose": "^6.8.3",
+    "nodemailer": "^6.9.0",
     "validator": "^13.7.0"
   }
 }
