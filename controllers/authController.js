@@ -4,6 +4,7 @@ const User = require('./../models/userModel')
 const Ride = require('./../models/rideModel')
 const { validate } = require('./../models/userModel')
 const sendEmail = require('./../utils/email')
+const crypto = require('crypto')
 
 const signToken = id => {
     return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -65,6 +66,33 @@ exports.forgotPassword = async (req, res) => {
 
 }
 
+// reset password 
+
+exports.resetPassword = async (req, res) => {
+    const hashToken = crypto.createHash('sha256').update(req.params.token).digest('hex')
+    const user = await User.findOne({
+        passwordRestToken: hashToken,
+        passwordResetExpires: { $gt: Date.now() }
+
+    })
+    if (!user) {
+        res.status(500).json({
+            status: 'failed user not found'
+        })
+    }
+    user.createPassword = req.body.password,
+        user.passwordConfirm = req.body.passwordConfirm
+    passwordRestToken: undefined
+    passwordResetExpires: undefined
+    await user.save()
+    const token = signToken(user._id)
+    res.status(200).json({
+        status: 'sucess',
+        message: 'password changed sucessfully',
+        token
+    })
+
+}
 
 
 

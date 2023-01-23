@@ -7,5 +7,6 @@ router.get('/getUsers', userController.getAlluser)
 router.get('/getUsers/:id', userController.singleUser)
 router.post('/login', userController.login)
 router.post('/forgotPassword', authController.forgotPassword)
+router.post('/forgotPassword/:token', authController.resetPassword)
 
 module.exports = router
