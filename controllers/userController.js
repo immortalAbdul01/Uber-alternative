@@ -1,14 +1,47 @@
 const User = require('./../models/userModel')
 
 
+const jwt = require('jsonwebtoken')
+
+const signToken = id => {
+    return jwt.sign({ id }, process.env.JWT_SECRET, {
+        expiresIn: process.env.JWT_EXPIRESIN
+    })
+
+}
+const cookieOption = {
+    Expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRESIN * 24 * 60 * 60 * 1000),
+
+
+    HttpOnly: true
+}
+if (process.env.NODE_ENV === 'production') {
+    cookieOption.Secure = true
+}
+
+
+
+const createToken = (user, statusCode, res) => {
+    const token = signToken(user._id)
+
+    res.cookie('jwt', token, cookieOption)
+    res.status(statusCode).json({
+        mssg: 'token send sucessfully',
+        token
+    })
+}
+
 exports.signIn = async (req, res) => {
     try {
 
         const user = await User.create(req.body)
-
+        // createToken(user, 201, res)
         res.status(201).json({
             mssg: 'sucess',
-            user
+
+            data: {
+                user
+            }
 
         })
     } catch (err) {
@@ -28,11 +61,13 @@ exports.login = async (req, res) => {
         })
 
     }
-    else {
-        res.status(200).json({
-            mssg: 'logged in sucessfully'
-        })
-    }
+
+    const token = signToken(user._id)
+    res.status(200).json({
+        mssg: 'logged in sucessfully',
+        token
+    })
+
 }
 
 exports.getAlluser = async (req, res) => {
