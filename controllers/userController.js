@@ -56,3 +56,22 @@ exports.singleUser = async (req, res) => {
         })
     }
 }
+
+exports.getFemaleDriver = async (req, res) => {
+    try {
+
+        const users = await User.find({ role: 'driver', gender: 'female' }
+
+        )
+        res.status(200).json({
+            status: 'sucess',
+            message: 'all users',
+            data: users
+        })
+    } catch (err) {
+        res.status(404).json({
+            status: 'failed',
+            message: err.message
+        })
+    }
+}
