@@ -74,3 +74,9 @@ We are excited to have you contribute to our project. Happy coding!
 ## Thank you
 Thank you for choosing our Uber alternative!
 edit the file
+
+## Thanks to all the contributors ❤️
+<a href = "https://github.com/immortalAbdul01/Uber-alternative/contributors">
+  <img src = "https://contrib.rocks/image?repo=immortalAbdul01/Uber-alternative"/>
+</a>
+
