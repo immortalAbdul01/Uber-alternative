@@ -23,5 +23,40 @@ Our drivers are thoroughly vetted and trained to ensure the highest level of saf
 ## Mission
 We believe that everyone deserves a safe and comfortable ride, and we strive to provide that experience for all of our users.
 
+# Welcome to the Open Source Contribution Guide
+
+Thank you for your interest in contributing to our open source project! We are excited to have you join our community and help make our project even better.
+
+## How to Contribute
+
+1. Fork the repository: Click on the "Fork" button at the top of the project page. This will create a copy of the repository in your own account.
+
+2. Clone the repository: Use the "Clone or download" button to copy the repository's URL, then open a terminal and use the command `git clone [repository URL]` to create a local copy on your computer.
+
+3. Create a new branch: Use the command `git branch [branch name]` to create a new branch for your changes. For example, if you are working on a bug fix, you might name your branch "fix-bug-123".
+
+4. Make your changes: Make the changes you want to contribute in your local copy of the repository.
+
+5. Commit your changes: Use the command `git commit -am "[commit message]"` to save your changes and add a commit message that describes what you did.
+
+6. Push your changes: Use the command `git push origin [branch name]` to send your changes to your forked repository on GitHub.
+
+7. Create a pull request: Go to the original repository on GitHub and click the "New pull request" button. Select the branch you just pushed as the "compare" branch, and make sure the "base" branch is set to the branch you want to merge your changes into (usually "master").
+
+8. Wait for review: The project maintainers will review your pull request and may provide feedback or ask for changes. Once they are satisfied with your changes, they will merge them into the project.
+
+## Code of Conduct
+
+Please note that this project is governed by a [code of conduct](CODE_OF_CONDUCT.md). By participating in this project, you agree to abide by its terms.
+
+## Additional Resources
+
+- [GitHub's guide to contributing to open source](https://opensource.guide/how-to-contribute/)
+- [The GitHub Flow](https://guides.github.com/introduction/flow/)
+- [How to write a good commit message](https://chris.beams.io/posts/git-commit/)
+
+We are excited to have you contribute to our project. Happy coding!
+
+
 ## Thank you
 Thank you for choosing our Uber alternative!
