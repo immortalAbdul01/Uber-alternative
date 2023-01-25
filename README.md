@@ -45,6 +45,19 @@ Thank you for your interest in contributing to our open source project! We are e
 
 8. Wait for review: The project maintainers will review your pull request and may provide feedback or ask for changes. Once they are satisfied with your changes, they will merge them into the project.
 
+## Contributing to the Frontend
+1. Create a public folder in the root directory of the project.
+2. Do all frontend development within the public folder.
+    - If using React, create a React app within the public folder.
+
+## Contributing to the Backend
+1. Install npm
+2. Install Postman
+3. Do all backend development in the root directory of the project.
+
+Please ensure that your code follows the existing coding conventions and is well-documented. Before submitting a pull request, please ensure that your code has been thoroughly tested and does not contain any errors. Thank you for your contribution!
+
+
 ## Code of Conduct
 
 Please note that this project is governed by a [code of conduct](CODE_OF_CONDUCT.md). By participating in this project, you agree to abide by its terms.
