@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 
+
+
 const rideSchema = new mongoose.Schema({
     pickUplocation: {
         type: String,
@@ -17,6 +19,8 @@ const rideSchema = new mongoose.Schema({
 
     }
 })
+
+
 
 const Ride = mongoose.model('ride', rideSchema)
 module.exports = Ride

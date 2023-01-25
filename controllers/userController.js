@@ -1,7 +1,9 @@
 const User = require('./../models/userModel')
 
-
+// const Driver = require('./../models/driverModel')
 const jwt = require('jsonwebtoken')
+
+
 
 const signToken = id => {
     return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -34,7 +36,9 @@ const createToken = (user, statusCode, res) => {
 exports.signIn = async (req, res) => {
     try {
 
+
         const user = await User.create(req.body)
+
         // createToken(user, 201, res)
         res.status(201).json({
             mssg: 'sucess',
