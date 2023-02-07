@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+
+
+/* nav {
+  position: fixed;
+  width: 100%;
+  margin-bottom: 115px;
+} */
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
