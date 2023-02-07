@@ -9,7 +9,7 @@ exports.bookRide = async (req, res) => {
             ride
 
         })
-    } catch (res) {
+    } catch (err) {
         res.status(404).json({
             mssg: 'failed try again',
             mssg: err.message
