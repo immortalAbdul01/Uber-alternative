@@ -75,6 +75,8 @@ We are excited to have you contribute to our project. Happy coding!
 
 ## Thank you
 Thank you for choosing our Uber alternative!
+
+# just adding a comment for demo purpose
 edit the file
 
 ## Thanks to all the contributors ❤️
